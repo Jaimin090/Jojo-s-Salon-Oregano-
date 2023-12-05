@@ -12,13 +12,12 @@ class Appointment:
 
     def get_client_name(self):
         return self.__client_name
-    # sasas
 
     def set_client_name(self, client_name):
         self.__client_name = client_name
 
     def get_client_phone(self):
-         return self.__client_phone   # ssc
+        return self.__client_phone  
     
     def set_client_phone(self, client_phone):
         self.__client_phone = client_phone
