@@ -6,8 +6,8 @@
 # All appointments are between 9 AM - 4 PM daily. All appointments are one hour long.
 # This appointment Manager is for a six day week (Monday-Saturday).
 #
-# Author: Zi Liang
-# Version/Date: 2023-12-04
+# Author:
+# Version/Date:
 #
 import appointment as ap
 # import file functions
@@ -37,11 +37,7 @@ def main():
     print("Weekly calendar created")
 
     load_flag = input("Would you like to load previously scheduled appointments from a file (Y/N)? ")
-    while not load_flag.lower() in "yn":
-        load_flag = input("Would you like to load previously scheduled appointments from a file (Y/N)? ")
-
-    if load_flag.lower() == "y":
-        load_scheduled_appointments(appt_calendar)
+    # Write code to load appointments here, call load_schedule_appointments
 
     # Display the menu and input user selections (loop)
     selection = print_menu()
@@ -51,33 +47,19 @@ def main():
         #  1. Schedule an appointment
         if selection == 1:
             print("\n** Schedule an appointment **")
-            schedule_appointment(appt_calendar)
+            # call schedule_appointment
         #  2. Find appointment by name
         elif selection == 2:
             print("\n** Find appointment by name **")
-            name = input("Enter Client Name: ")
-            print(f"Appointments for {name}\n")
-            show_appointments_by_name(appt_calendar, name)
+            # call show_appointments_by_name
         #  3. Show all appointments for a specific day
         elif selection == 3:
             print("\n** Print calendar for a specific day **")
-            day = input("What day: ")
-            print(f"Appointments for {day.title()}\n")
-            show_appointments_by_day(appt_calendar, day)
+            # call show_appointments_by_day
         #  4. Cancel an appointment
         elif selection == 4:
             print("\n** Cancel an appointment **")
-            day = input("What day: ")
-            hour = int(input("Enter start hour: "))
-            appt = find_appointment_by_time(appt_calendar, day.title(), int(hour))
-            if appt is not None:
-                if appt.get_appt_type() != 0:
-                    print(f"Appointment: {appt.get_day_of_week()} {appt.get_start_time_hour()}:00 - {appt.get_end_time_hour()}:00 for {appt.get_client_name()} has been cancelled!")
-                    appt.cancel()
-                else:
-                    print("That time slot isn't booked and doesn't need to be cancelled")
-            else:
-                print("Sorry that time slot is not in the weekly calendar!")
+            # write code to cancel appointment here
         #  ?. Invalid selection
         elif selection != 9:
             print("\nInvalid option")
@@ -88,12 +70,6 @@ def main():
     print("\n** Exit the system **")
     save_flag = input("Would you like to save all scheduled appointments to a file (Y/N)? ")
     # save the appointments if the user requests it, call save_scheduled_appointments
-    while not save_flag.lower() in "yn":
-        save_flag = input("Would you like to save all scheduled appointments to a file (Y/N)? ")
-
-    if save_flag.lower() == "y":
-        save_scheduled_appointments(appt_calendar)
-
     print("Good Bye!")
 
 def create_weekly_calendar(appt_cal):
