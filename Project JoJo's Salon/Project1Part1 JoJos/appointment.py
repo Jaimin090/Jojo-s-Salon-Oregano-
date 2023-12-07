@@ -8,6 +8,9 @@ class Appointment:
     def __init__(self, day_of_week, start_time_hour):
         self.__day = day_of_week
         self.__hour = start_time_hour
+        self.__type = 0
+        self.__nameclient = ""
+        self.__phoneclient = ""
 
     # getter and setters for the attributes of an Appointment object
 
@@ -52,7 +55,7 @@ class Appointment:
         return Appointment.APPT_TYPE_DESCS[self.__type]
     
     def format_record(self):
-        return f"{self.__name},{self.__phone},{self.__type},{self.__day},{self.__hour:02d}"
+        return f"{self.__nameclient},{self.__phoneclient},{self.__type},{self.__day},{self.__hour:02d}"
     
     def __str__(self):
-        return f"{self.__name:<20}{self.__phone:<15}{self.__day:<10}{self.__hour:02d}:00  -  {self.get_end_time_hour():02d}:00     {self.get_appt_type_desc()}"
+        return f"{self.__nameclient:<20}{self.__phoneclient:<15}{self.__day:<10}{self.__hour:02d}:00  -  {self.get_end_time_hour():02d}:00     {self.get_appt_type_desc()}"
