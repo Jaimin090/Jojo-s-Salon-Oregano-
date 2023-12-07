@@ -1,8 +1,8 @@
 #
 # test_appointment - This program tests the majority of the methods in the Appointment class
 #
-# Author:
-# Version/Date:
+# Author: Dave Leskiw
+# Version/Date: 2023-12-02
 #
 import appointment as ap
 

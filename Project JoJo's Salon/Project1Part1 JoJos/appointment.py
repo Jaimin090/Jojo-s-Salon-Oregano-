@@ -6,48 +6,56 @@ class Appointment:
     
     # constructor for the Appointment class
     def __init__(self, day_of_week, start_time_hour):
-        self.__day_of_week = day_of_week
-        self.__start_time_hour = start_time_hour
-        # getter and setters for the attributes of an Appointment object
+        self.__day = day_of_week
+        self.__hour = start_time_hour
+        self.__type = 0
+        self.__nameclient = ""
+        self.__phoneclient = ""
+
+    # getter and setters for the attributes of an Appointment object
 
     def get_client_name(self):
-        return self.__client_name
+        return self.__nameclient
 
     def set_client_name(self, client_name):
-        self.__client_name = client_name
+        self.__nameclient = client_name
 
     def get_client_phone(self):
-         return self.__client_phone   # ssc
+        return self.__phoneclient  
     
     def set_client_phone(self, client_phone):
-        self.__client_phone = client_phone
+        self.__phoneclient = client_phone
 
     def get_appt_type(self):
-        return self._appt_type
+        return self.__type
     
     def set_appt_type(self, appt_type):
-        self._appt_type = appt_type
+        self.__type = appt_type
 
     def get_day_of_week(self):
-        pass
+        return self.__day
 
     def get_start_time_hour(self):
-        pass
+        return self.__hour
     
     def get_end_time_hour(self):
-        pass
-
+        return self.__hour + 1
+        
     def schedule(self, client_name, client_phone, appt_type):
-        pass
+        self.set_client_name(client_name)
+        self.set_client_phone(client_phone)
+        self.set_appt_type(appt_type)
 
     def cancel(self):
-        pass
+        self.set_client_name("")
+        self.set_client_phone("")
+        self.set_appt_type(0)
 
     def get_appt_type_desc(self):
-        pass
+        return Appointment.APPT_TYPE_DESCS[self.__type]
     
     def format_record(self):
-        pass
+        return f"{self.__nameclient},{self.__phoneclient},{self.__type},{self.__day},{self.__hour:02d}"
     
     def __str__(self):
-        return ''
+        return f"{self.__nameclient:<20}{self.__phoneclient:<15}{self.__day:<10}{self.__hour:02d}:00  -  {self.get_end_time_hour():02d}:00     {self.get_appt_type_desc()}"
