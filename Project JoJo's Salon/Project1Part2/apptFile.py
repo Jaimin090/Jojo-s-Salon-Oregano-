@@ -10,7 +10,7 @@ def load_scheduled_appointments(appt_cal: list[ap.Appointment]):
     # Ask user for the appointment file name
     file_name = input("Enter appointment filename: ")
     # check if file exists, prompt re-entry if not found
-    while not path.isfile(file_name): #path.isfile usage reference: https://stackoverfl  ow.com/questions/17658856/why-am-i-getting-a-filenotfounderror
+    while not path.isfile(file_name): #path.isfile usage reference: https://stackoverflow.com/questions/17658856/why-am-i-getting-a-filenotfounderror
         file_name = input("File not found. Re-enter appointment filename: ")
 
     # open file in read mode
