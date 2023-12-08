@@ -43,10 +43,8 @@ def save_scheduled_appointments(appt_cal: list[ap.Appointment]):
         overwrite_choice = input("File already exists. Do you want to overwrite it (Y/N)? ").lower()
         if overwrite_choice == "y":
             overwrite = True
-        elif overwrite_choice == "n":
-            overwrite = False
+            break
         file_name = input("Enter appointment filename: ")
-        overwrite = False
 
     # open file in write mode
     file = open(file_name, "w")
