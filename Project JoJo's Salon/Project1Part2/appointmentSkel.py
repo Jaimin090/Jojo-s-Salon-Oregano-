@@ -6,7 +6,7 @@
 # All appointments are between 9 AM - 4 PM daily. All appointments are one hour long.
 # This appointment Manager is for a six day week (Monday-Saturday).
 #
-# Author: Zi Liang
+# Author: Zi Liang, Jaimin Chavda, Aman Sharma
 # Version/Date: 2023-12-04
 #
 import appointment as ap
