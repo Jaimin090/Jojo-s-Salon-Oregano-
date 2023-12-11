@@ -27,7 +27,7 @@ def main():
     found = False
     index = 0
     while index < len(appt_list) and not found:
-        current_appt = appt_list[index]
+        current_appt = appt_list[index]  # checks time slots by putting index as 0,1,2... in the list x
         # is this appointment the noon hour appointment for Saturday available?
         if current_appt.get_day_of_week() == "Saturday" and \
            current_appt.get_start_time_hour() == 12 and \
